@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Sentiment Analysis Results</h1>
+    <div class="prediction">
+        <h2>Prediction:</h2>
+        <p>{{ prediction }}</p>
+    </div>
+    <div class="graph">
+        <h2>Sentiment Distribution:</h2>
+        <img src="{{ url_for('static', filename=graph) }}" alt="Sentiment Graph">
+        <!-- <img src={graph} alt="Sentiment Graph"> -->
+    </div>
+    <div class="confusion-matrix">
+        <h2>Confusion Matrix:</h2>
+        <table>
+            <tr>
+                <th></th>
+                <th>Predicted Negative</th>
+                <th>Predicted Neutral</th>
+                <th>Predicted Positive</th>
+            </tr>
+            <tr>
+                <th>Actual Negative</th>
+                <td>{{ confusion_matrix.0.0 }}</td>
+                <td>{{ confusion_matrix.0.1 }}</td>
+                <td>{{ confusion_matrix.0.2 }}</td>
+            </tr>
+            <tr>
+                <th>Actual Neutral</th>
+                <td>{{ confusion_matrix.1.0 }}</td>
+                <td>{{ confusion_matrix.1.1 }}</td>
+                <td>{{ confusion_matrix.1.2 }}</td>
+            </tr>
+            <tr>
+                <th>Actual Positive</th>
+                <td>{{ confusion_matrix.2.0 }}</td>
+                <td>{{ confusion_matrix.2.1 }}</td>
+                <td>{{ confusion_matrix.2.2 }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

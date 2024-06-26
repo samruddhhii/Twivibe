@@ -1,0 +1,30 @@
+/* write styles for following elements class predection, class graph and class confusion matrix and for body */
+.prediction {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin: 10px;
+}
+
+.graph {
+  margin: 10px;
+}
+
+.confusion-matrix {
+  margin: 10px;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  margin: 0px;
+  padding: 0px;
+  /* everything inside body should  be centered  */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
